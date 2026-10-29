@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hookset Creative | AI ad studio for home, kitchen, gadget &amp; pet brands</title>
+<meta name="description" content="20 new ad concepts every month, delivered in 3 business days. AI-made ads built from your real product photos, checked by a human, sized for every placement.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 26 26%22%3E%3Crect x=%221%22 y=%221%22 width=%2224%22 height=%2224%22 rx=%227%22 fill=%22%230a0d18%22/%3E%3Cpath d=%22M9 7v7a4 4 0 0 0 8 0%22 fill=%22none%22 stroke=%22%23ffc24b%22 stroke-width=%222.4%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a split hero where a live ad feed scrolls past a fixed 3-second "hook window", then a single column of spec-sheet sections. */
+:root{
+  --bg:#f2f4f9; --surface:#ffffff; --raise:#e7eaf3; --line:#d5dae8;
+  --fg:#0c1020; --muted:#59617a; --accent:#b86b00; --accent-ink:#ffffff; --glow:rgba(184,107,0,.16);
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0a0d18; --surface:#121729; --raise:#1a2036; --line:#252c47;
+  --fg:#eef0f8; --muted:#8e96b3; --accent:#ffc24b; --accent-ink:#0a0d18; --glow:rgba(255,194,75,.18);
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0a0d18; --surface:#121729; --raise:#1a2036; --line:#252c47;
+  --fg:#eef0f8; --muted:#8e96b3; --accent:#ffc24b; --accent-ink:#0a0d18; --glow:rgba(255,194,75,.18);
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1160px;margin:0 auto}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.02em}
+p{margin:0}
+.mono{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:22px;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;font:800 20px var(--display);text-decoration:none;letter-spacing:-.02em}
+.logo svg{flex:0 0 auto}
+.links{display:flex;gap:22px;flex-wrap:wrap;font-weight:600;font-size:15px}
+.links a{text-decoration:none;color:var(--muted)} .links a:hover{color:var(--fg)}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 16px var(--body);padding:15px 24px;border-radius:999px;text-decoration:none;border:1px solid var(--line);color:var(--fg);background:transparent;cursor:pointer}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{transform:translateY(-1px)}
+.btn{transition:transform .15s ease}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding-block:40px 64px}
+.hero > div{min-width:0}
+.hero h1{font-size:clamp(40px,5.4vw,72px);line-height:.98;font-weight:800;margin-block:18px 22px}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:19px;color:var(--muted);max-width:34em}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.specline{margin-top:26px;display:flex;flex-wrap:wrap;gap:8px}
+.tag{font-family:var(--mono);font-size:12px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+
+/* phone feed */
+.phone{position:relative;width:min(340px,100%);aspect-ratio:9/17.5;margin-inline:auto;border-radius:44px;padding:12px;background:var(--surface);border:1px solid var(--line);box-shadow:0 40px 80px -30px var(--glow),0 0 0 8px var(--raise)}
+.screen{position:relative;height:100%;border-radius:34px;overflow:hidden;background:#05060b}
+.feed{display:flex;flex-direction:column;gap:10px;padding:10px;animation:scroll 26s linear infinite}
+.feed img{width:100%;display:block;border-radius:14px}
+@keyframes scroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+.window{position:absolute;left:8px;right:8px;top:30%;height:46%;border:2px solid var(--accent);border-radius:20px;box-shadow:0 0 0 9999px rgba(5,6,11,.55);pointer-events:none}
+.window span{position:absolute;top:-13px;left:14px;background:var(--accent);color:var(--accent-ink);font:500 11px var(--mono);letter-spacing:.08em;padding:3px 8px;border-radius:999px}
+.window i{position:absolute;bottom:-13px;right:14px;font:500 11px var(--mono);font-style:normal;background:#05060b;color:#ffc24b;border:1px solid #ffc24b;padding:3px 8px;border-radius:999px}
+@media (prefers-reduced-motion: reduce){.feed{animation:none}.btn{transition:none}}
+
+/* spec strip */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--surface)}
+.strip div{padding:22px 24px;border-right:1px solid var(--line)}
+.strip div:last-child{border-right:0}
+.strip b{display:block;font:700 28px var(--display);letter-spacing:-.02em}
+.strip span{color:var(--muted);font-size:15px}
+
+section{padding-block:88px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:32px}
+.head h2{font-size:clamp(30px,4vw,48px);line-height:1.05;font-weight:700;max-width:16em}
+.head p{color:var(--muted);max-width:30em}
+
+/* work grid */
+.work{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:12px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.card img{width:100%;border-radius:12px;display:block;aspect-ratio:4/5;object-fit:cover;background:var(--raise)}
+.card.tall img{aspect-ratio:9/16}
+.meta{display:flex;justify-content:space-between;gap:8px;align-items:center;padding:0 4px}
+.meta strong{font-size:15px}
+.fname{font:400 11.5px var(--mono);color:var(--muted);padding:0 4px 4px;overflow-wrap:anywhere}
+.pill{font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:999px;background:var(--raise);color:var(--muted);white-space:nowrap}
+.note{margin-top:18px;color:var(--muted);font-size:15px}
+
+/* process */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+.step{border-top:2px solid var(--line);padding-top:18px;min-width:0}
+.step:first-child{border-top-color:var(--accent)}
+.step .mono{color:var(--accent)}
+.step h3{font-size:20px;font-weight:700;margin-block:10px 8px}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* two column */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:32px;min-width:0}
+.panel h3{font-size:22px;font-weight:700;margin-bottom:16px}
+.panel ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.panel li{display:flex;gap:12px;align-items:baseline}
+.panel li::before{content:"";flex:0 0 8px;height:8px;border-radius:2px;background:var(--accent);transform:translateY(-1px)}
+
+/* pricing */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+.price{background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.price.feature{border-color:var(--accent);box-shadow:0 30px 60px -36px var(--glow)}
+.price h3{font-size:18px;font-weight:700}
+.amount{font:800 44px var(--display);letter-spacing:-.03em}
+.amount small{font:500 16px var(--body);color:var(--muted);letter-spacing:0}
+.price ul{margin:0;padding:0;list-style:none;display:grid;gap:10px;color:var(--muted);font-size:15.5px;flex:1}
+.price li{border-top:1px solid var(--line);padding-top:10px}
+
+/* trial form */
+.trial{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:40px}
+.trial > div{min-width:0}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+label.full{grid-column:1/-1}
+input,select,textarea{font:500 16px var(--body);color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
+textarea{min-height:96px;resize:vertical}
+.formnote{grid-column:1/-1;color:var(--muted);font-size:14px}
+.sent{grid-column:1/-1;padding:14px 16px;border-radius:12px;background:var(--raise);font-weight:600}
+
+/* faq */
+details{border-top:1px solid var(--line);padding-block:18px}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font-weight:700;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font-family:var(--mono);color:var(--accent)}
+details[open] summary::after{content:"\2212"}
+details p{color:var(--muted);margin-top:10px;max-width:46em}
+
+footer{padding-block:72px 40px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .hero,.trial,.split{grid-template-columns:1fr}
+  .work,.prices{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip div:nth-child(2){border-right:0}
+  .strip div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+}
+@media (max-width:560px){
+  .work,.prices,.steps,form{grid-template-columns:1fr}
+  .trial{padding:24px}
+  .links{gap:14px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<nav aria-label="Main">
+  <a class="logo" href="#top" aria-label="Hookset home">
+    <svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><rect x="1" y="1" width="24" height="24" rx="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 7v7a4 4 0 0 0 8 0" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round"/></svg>
+    hookset<span class="mono" style="font-size:11px;margin-left:4px;align-self:center">creative</span>
+  </a>
+  <div class="links"><a href="#work">Work</a><a href="#process">Process</a><a href="#pricing">Pricing</a><a href="#trial">Start a trial</a></div>
+</nav>
+
+<header class="hero" id="top">
+  <div>
+    <p class="mono">AI ad studio · home, kitchen, gadget &amp; pet brands</p>
+    <h1>Ads that stop the scroll in <em>three seconds.</em></h1>
+    <p class="lede">20 new ad concepts every month, delivered in 3 business days. Built with AI from your real product photos, checked by a human, and sized for every placement. For brands, and for the agencies that run their ads.</p>
+    <div class="ctas"><a class="btn primary" href="#trial">Start a $150 trial</a><a class="btn" href="#work">See the work</a></div>
+    <div class="specline"><span class="tag">4:5 · 1:1 · 9:16</span><span class="tag">1080 px</span><span class="tag">named &amp; ready to upload</span></div>
+  </div>
+  <div>
+    <div class="phone" role="img" aria-label="A phone feed of sample ads scrolling past a highlighted three-second hook window">
+      <div class="screen">
+        <div class="feed">
+          <img src="ads/saltgrain_notes_scale_static_4x5_v1.webp" alt="">
+          <img src="ads/orrin_30off_halolamp_static_4x5_v1.webp" alt="">
+          <img src="ads/pawlow_listicle_dogbed_static_4x5_v1.webp" alt="">
+          <img src="ads/stillwell_icefor24h_tumbler_static_4x5_v1.webp" alt="">
+          <img src="ads/saltgrain_usvsthem_scale_static_4x5_v1.webp" alt="">
+          <img src="ads/saltgrain_notes_scale_static_4x5_v1.webp" alt="">
+          <img src="ads/orrin_30off_halolamp_static_4x5_v1.webp" alt="">
+          <img src="ads/pawlow_listicle_dogbed_static_4x5_v1.webp" alt="">
+          <img src="ads/stillwell_icefor24h_tumbler_static_4x5_v1.webp" alt="">
+          <img src="ads/saltgrain_usvsthem_scale_static_4x5_v1.webp" alt="">
+        </div>
+        <div class="window" aria-hidden="true"><span>0:00 – 0:03</span><i>the hook</i></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div><b>20</b><span>new concepts a month</span></div>
+  <div><b>3 days</b><span>from brief to batch</span></div>
+  <div><b>3 sizes</b><span>for every ad</span></div>
+  <div><b>2 rounds</b><span>of revisions per batch</span></div>
+</div>
+
+<section id="work">
+  <div class="head">
+    <h2>Concept work</h2>
+    <p>Six ads across five formats. Every file arrives named the way media buyers sort them.</p>
+  </div>
+  <div class="work">
+    <figure class="card" style="margin:0">
+      <img src="ads/saltgrain_notes_scale_static_4x5_v1.webp" alt="Notes-style ad for the Saltgrain kitchen scale: why my bread finally works" loading="lazy">
+      <div class="meta"><strong>Saltgrain · Notes</strong><span class="pill">Static 4:5</span></div>
+      <div class="fname">saltgrain_notes_scale_static_4x5_v1</div>
+    </figure>
+    <figure class="card" style="margin:0">
+      <img src="ads/saltgrain_usvsthem_scale_static_4x5_v1.webp" alt="Comparison ad: measuring cups versus the Saltgrain scale" loading="lazy">
+      <div class="meta"><strong>Saltgrain · Us vs. them</strong><span class="pill">Static 4:5</span></div>
+      <div class="fname">saltgrain_usvsthem_scale_static_4x5_v1</div>
+    </figure>
+    <figure class="card" style="margin:0">
+      <img src="ads/orrin_30off_halolamp_static_4x5_v1.webp" alt="Offer ad: 30 percent off the Orrin Halo desk lamp" loading="lazy">
+      <div class="meta"><strong>Orrin · Offer</strong><span class="pill">Static 4:5</span></div>
+      <div class="fname">orrin_30off_halolamp_static_4x5_v1</div>
+    </figure>
+    <figure class="card" style="margin:0">
+      <img src="ads/pawlow_listicle_dogbed_static_4x5_v1.webp" alt="Listicle ad: 4 reasons dogs claim the Pawlow bed first" loading="lazy">
+      <div class="meta"><strong>Pawlow · Listicle</strong><span class="pill">Static 4:5</span></div>
+      <div class="fname">pawlow_listicle_dogbed_static_4x5_v1</div>
+    </figure>
+    <figure class="card" style="margin:0">
+      <img src="ads/stillwell_icefor24h_tumbler_static_4x5_v1.webp" alt="Product ad: Ice at 9 am, ice at 9 pm, Stillwell tumbler" loading="lazy">
+      <div class="meta"><strong>Stillwell · Product + headline</strong><span class="pill">Static 4:5</span></div>
+      <div class="fname">stillwell_icefor24h_tumbler_static_4x5_v1</div>
+    </figure>
+    <figure class="card tall" style="margin:0">
+      <img src="ads/orrin_30off_halolamp_static_9x16_v1.webp" alt="Story version of the Orrin lamp offer, kept inside the 9:16 safe zone" loading="lazy">
+      <div class="meta"><strong>Orrin · Story cut</strong><span class="pill">Static 9:16</span></div>
+      <div class="fname">orrin_30off_halolamp_static_9x16_v1</div>
+    </figure>
+  </div>
+  <p class="note">All samples are concept work for fictional demo brands. Client work is shown only with the client's permission.</p>
+</section>
+
+<section id="process">
+  <div class="head">
+    <h2>One batch, start to finish</h2>
+    <p>Each month runs on the same loop, so every batch learns from the last one.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><p class="mono">Day 0</p><h3>You send a brief</h3><p>A short form: product photos, offer, buyer, brand rules, and 3–5 ads you like.</p></div>
+    <div class="step"><p class="mono">Day 1</p><h3>We write concepts</h3><p>Distinct angles and hooks, not the same ad resized. You see the plan before we produce.</p></div>
+    <div class="step"><p class="mono">Day 3</p><h3>Your batch lands</h3><p>Every ad in 4:5, 1:1 and 9:16, inside platform safe zones, with a note on what each concept tests.</p></div>
+    <div class="step"><p class="mono">Day 7+</p><h3>We build on winners</h3><p>Share results and the next batch doubles down on what worked: new versions, new formats, fresh ideas.</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="split">
+    <div class="panel">
+      <p class="mono">For agencies</p>
+      <h3 style="margin-top:10px">Your logo, not ours</h3>
+      <ul>
+        <li>Unbranded files you deliver as your own work</li>
+        <li>We never contact your clients, and we sign an NDA by default</li>
+        <li>Turnaround built around your client deadlines</li>
+        <li>Fully async over email or your Slack</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <p class="mono">How we use AI</p>
+      <h3 style="margin-top:10px">Real products, honest ads</h3>
+      <ul>
+        <li>We build scenes around your real product photos, never AI-invented products</li>
+        <li>No fake reviews, testimonials or AI "customers", ever</li>
+        <li>A person checks every ad for warped labels, text and hands</li>
+        <li>We flag AI content so you can label ads the way Meta and TikTok require</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="head">
+    <h2>Simple monthly packages</h2>
+    <p>Pause or cancel anytime. Prices are locked for as long as you stay.</p>
+  </div>
+  <div class="prices">
+    <div class="price">
+      <h3>Trial</h3>
+      <div class="amount">$150 <small>once</small></div>
+      <ul><li>5 ads on one product</li><li>4 statics + 1 short video</li><li>All three sizes</li><li>Delivered in 3 business days</li></ul>
+      <a class="btn" href="#trial">Start a trial</a>
+    </div>
+    <div class="price feature">
+      <h3>Starter</h3>
+      <div class="amount">$1,500 <small>/ month</small></div>
+      <ul><li>20 static ads a month</li><li>4 short videos</li><li>2 revision rounds per batch</li><li>Concepts built on your results</li></ul>
+      <a class="btn primary" href="#trial">Start with a trial</a>
+    </div>
+    <div class="price">
+      <h3>Growth</h3>
+      <div class="amount">$3,000 <small>/ month</small></div>
+      <ul><li>40 static ads a month</li><li>10 short videos</li><li>Weekly "what won" report</li><li>Priority turnaround</li></ul>
+      <a class="btn" href="#trial">Start with a trial</a>
+    </div>
+  </div>
+</section>
+
+<section id="trial">
+  <div class="trial">
+    <div>
+      <p class="mono">$150 trial</p>
+      <h2 style="font-size:clamp(28px,3.6vw,42px);line-height:1.05;margin-block:12px 16px">Five ads on your product in three days</h2>
+      <p style="color:var(--muted)">Tell us about the product. You'll get a short brief form and a payment link by email. If none of the five ads are usable, your next batch is free.</p>
+    </div>
+    <form id="trialForm" novalidate>
+      <label>Your name<input id="f-name" name="name" autocomplete="name" required></label>
+      <label>Work email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <label>Company website<input id="f-site" name="site" type="url" placeholder="https://"></label>
+      <label>You are<select id="f-type" name="type"><option>A brand</option><option>An agency</option></select></label>
+      <label class="full">What do you sell?<textarea id="f-what" name="what" placeholder="e.g. a kitchen scale, $39, sold on our Shopify store"></textarea></label>
+      <button class="btn primary" type="submit" style="justify-self:start">Request a trial</button>
+      <p class="formnote" id="formStatus">Preview site: this form isn't connected yet.</p>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="head"><h2>Questions</h2></div>
+  <details><summary>Do you need my product photos?</summary><p>Yes. We place your real product into new scenes, so 3–5 clear photos of the product are the most important part of the brief. Plain backgrounds work best.</p></details>
+  <details><summary>Will the ads look AI-made?</summary><p>That's what we work hardest to avoid. The product is always your real photo, text is set by hand in templates, and every ad is checked before delivery.</p></details>
+  <details><summary>Do you run the ads too?</summary><p>No. We make the ads; you or your agency runs them. Share results after launch and we use them to plan the next batch.</p></details>
+  <details><summary>Which brands do you work with?</summary><p>Home goods, kitchen, gadgets and pet accessories. We don't take supplements, weight loss, CBD, alcohol or finance.</p></details>
+  <details><summary>Do we need a call?</summary><p>No. Everything runs over email or Slack. If you'd like a quick voice call first, we can set one up.</p></details>
+</section>
+
+<footer>
+  <span>© 2026 Hookset Creative</span>
+  <span>Concept work shown uses fictional demo brands.</span>
+</footer>
+</div>
+
+<script>
+(function(){
+  var form=document.getElementById('trialForm'),status=document.getElementById('formStatus');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var name=document.getElementById('f-name'),email=document.getElementById('f-email');
+    if(!name.value.trim()||!email.value.trim()||!email.checkValidity()){
+      status.textContent='Add your name and a valid work email to request a trial.';
+      return;
+    }
+    status.className='sent';
+    status.textContent='Got it, '+name.value.trim().split(' ')[0]+'. This is a preview, so nothing was sent yet. On the live site this goes straight to the studio inbox.';
+  });
+})();
+</script>
+
+</body>
+</html>
