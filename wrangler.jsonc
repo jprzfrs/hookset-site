@@ -3,5 +3,9 @@
   "name": "hookset-site",
   "compatibility_date": "2026-09-01",
   "assets": { "directory": "./public" },
-  "workers_dev": true
+  "workers_dev": true,
+  "routes": [
+    { "pattern": "hooksetcreative.com", "custom_domain": true },
+    { "pattern": "www.hooksetcreative.com", "custom_domain": true }
+  ]
 }
