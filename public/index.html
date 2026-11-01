@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hookset Creative | AI ad studio for home, kitchen, gadget &amp; pet brands</title>
 <meta name="description" content="Static and motion ads every month, built with AI from your real product photos, checked by a human, sized for every placement. In English, Spanish, or both.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hookset Creative | AI ad studio">
+<meta property="og:description" content="Static and motion ads every month, built with AI from your real product photos and checked by a human. In English, Spanish, or both.">
+<meta property="og:url" content="https://hooksetcreative.com/">
+<meta property="og:image" content="https://hooksetcreative.com/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 26 26%22%3E%3Crect x=%221%22 y=%221%22 width=%2224%22 height=%2224%22 rx=%227%22 fill=%22%230a0d18%22/%3E%3Cpath d=%22M9 7v7a4 4 0 0 0 8 0%22 fill=%22none%22 stroke=%22%23ffc24b%22 stroke-width=%222.4%22 stroke-linecap=%22round%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -121,6 +127,14 @@ section{padding-block:88px 0}
 .panel ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
 .panel li{display:flex;gap:12px;align-items:baseline}
 .panel li::before{content:"";flex:0 0 8px;height:8px;border-radius:2px;background:var(--accent);transform:translateY(-1px)}
+
+/* founder */
+.founder{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:40px;display:grid;gap:22px}
+.fbody{display:flex;gap:28px;align-items:flex-start}
+.mark{flex:0 0 72px;height:72px;border-radius:20px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font:800 32px var(--display)}
+.fquote{font-size:clamp(19px,2.1vw,24px);line-height:1.5;max-width:38em}
+.fsig{margin-top:18px;color:var(--muted);font-weight:600;font-size:15px}
+@media (max-width:560px){.founder{padding:24px}.fbody{flex-direction:column;gap:18px}.mark{flex-basis:auto;width:56px;height:56px;font-size:26px}}
 
 /* pricing */
 .prices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
@@ -284,7 +298,7 @@ footer{padding-block:72px 40px;display:flex;justify-content:space-between;gap:16
     <p>Each month runs on the same loop, so every batch learns from the last one.</p>
   </div>
   <div class="steps">
-    <div class="step"><p class="mono">Day 0</p><h3>You send a brief</h3><p>A short form: product photos, offer, buyer, brand rules, and 3–5 ads you like.</p></div>
+    <div class="step"><p class="mono">Day 0</p><h3>You send a link</h3><p>Your product page and current offer. We pull your photos and study the ads you already run. Optional: ads you love or hate, and anything that's off-limits.</p></div>
     <div class="step"><p class="mono">Day 1</p><h3>We write concepts</h3><p>Distinct angles and hooks, not the same ad resized. You see the plan before we produce.</p></div>
     <div class="step"><p class="mono">Day 3</p><h3>Your batch lands</h3><p>Every ad in 4:5, 1:1 and 9:16, inside platform safe zones, with a note on what each concept tests.</p></div>
     <div class="step"><p class="mono">Day 7+</p><h3>We build on winners</h3><p>If you share your results (optional), the next batch doubles down on what worked: new versions, new formats, fresh ideas.</p></div>
@@ -341,6 +355,19 @@ footer{padding-block:72px 40px;display:flex;justify-content:space-between;gap:16
   </div>
 </section>
 
+<section id="about">
+  <div class="founder">
+    <div class="mono">Who's behind Hookset</div>
+    <div class="fbody">
+      <div class="mark" aria-hidden="true">J</div>
+      <div>
+        <p class="fquote">Hookset is run by Jesus, a business grad based in San Jose, CA. AI does the heavy lifting; I check every ad before it ships, write the Spanish versions myself, and answer every email within one business day. If an ad isn't right, it's on me to fix it.</p>
+        <p class="fsig">Jesus, founder · <a href="mailto:hello@hooksetcreative.com">hello@hooksetcreative.com</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="head">
     <h2>Simple monthly packages</h2>
@@ -376,7 +403,7 @@ footer{padding-block:72px 40px;display:flex;justify-content:space-between;gap:16
     <div>
       <p class="mono">$150 trial</p>
       <h2 style="font-size:clamp(28px,3.6vw,42px);line-height:1.05;margin-block:12px 16px">Ten ads on your product in three days</h2>
-      <p style="color:var(--muted)">Tell us about the product. You'll get a short brief form and a payment link by email. If none of the ten ads are usable, you get a full refund.</p>
+      <p style="color:var(--muted)">Tell us what you sell. We'll reply within one business day with a payment link. No long brief: we pull your photos and study your current ads ourselves. If none of the ten ads are usable, you get a full refund.</p>
       <p style="color:var(--muted);margin-top:14px">We're a new studio, so the trial is priced to make saying yes easy. Prefer email? Write to <a href="mailto:hello@hooksetcreative.com">hello@hooksetcreative.com</a>.</p>
     </div>
     <form id="trialForm" novalidate>
@@ -385,7 +412,7 @@ footer{padding-block:72px 40px;display:flex;justify-content:space-between;gap:16
       <label>Company website<input id="f-site" name="site" type="url" placeholder="https://"></label>
       <label>You are<select id="f-type" name="type"><option>A brand</option><option>An agency</option></select></label>
       <label class="full">Ad language<select id="f-lang" name="language"><option>English</option><option>Spanish</option><option>Both</option></select></label>
-      <label class="full">What do you sell?<textarea id="f-what" name="what" placeholder="e.g. a kitchen scale, $39, sold on our Shopify store"></textarea></label>
+      <label class="full">Product link and current offer<textarea id="f-what" name="what" placeholder="e.g. yourstore.com/products/kitchen-scale, 20% off this month"></textarea></label>
       <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
       <button class="btn primary" type="submit" style="justify-self:start">Request a trial</button>
       <p class="formnote" id="formStatus">We only use this to reply to you. No newsletters, no sharing.</p>
@@ -395,18 +422,19 @@ footer{padding-block:72px 40px;display:flex;justify-content:space-between;gap:16
 
 <section>
   <div class="head"><h2>Questions</h2></div>
-  <details><summary>Do you need my product photos?</summary><p>Yes. We place your real product into new scenes, so 3–5 clear photos of the product are the most important part of the brief. Plain backgrounds work best.</p></details>
+  <details><summary>Do I need to send product photos?</summary><p>No. We pull the official photos from your product page. If you have newer or better shots, send them; clear photos on plain backgrounds give the best results.</p></details>
   <details><summary>Will the ads look AI-made?</summary><p>That's what we work hardest to avoid. The product is always your real photo, text is set by hand in templates, and every ad is checked before delivery.</p></details>
   <details><summary>Do you run the ads too?</summary><p>No. We make the ads; you or your agency runs them. If you share results, we use them to plan the next batch.</p></details>
   <details><summary>Do I have to share my ad results?</summary><p>No. It's optional. Sharing view-only access or a monthly export unlocks the results review and lets us double down on your winners. Without it you still get every ad on schedule, and we plan from your brief and the ads you already run.</p></details>
   <details><summary>Do you make video ads?</summary><p>Yes: motion ads, 6–8 seconds in 9:16, built from your real product photos with animated text and movement. Live-action and AI video clips are coming soon. We'll only add them once they meet the same standard as our statics.</p></details>
-  <details><summary>Can you make ads in Spanish?</summary><p>Yes. Any ad can be in English, Spanish, or both, written and checked by a fluent bilingual speaker. Tell us which audience you're reaching (for example US Hispanic, Mexico or Spain) so the wording fits.</p></details>
+  <details><summary>Can you make ads in Spanish?</summary><p>Yes. Any ad can be in English, Spanish, or both, written and checked by our founder, who is fluent in both. Tell us which audience you're reaching (for example US Hispanic, Mexico or Spain) so the wording fits.</p></details>
+  <details><summary>Who owns the ads?</summary><p>You do. Once a batch is paid for, you can use, edit and run those ads anywhere, for as long as you like. Free sample ads we send you are yours to run too.</p></details>
   <details><summary>Which brands do you work with?</summary><p>Home goods, kitchen, gadgets and pet accessories. We don't take supplements, weight loss, CBD, alcohol or finance.</p></details>
   <details><summary>Do we need a call?</summary><p>No. Everything runs over email or Slack. If you'd like a quick voice call first, we can set one up.</p></details>
 </section>
 
 <footer>
-  <span>© 2026 Hookset Creative</span>
+  <span>© 2026 Hookset Creative · San Jose, CA</span>
   <span><a href="mailto:hello@hooksetcreative.com">hello@hooksetcreative.com</a></span>
   <span>Concept work shown uses fictional demo brands.</span>
 </footer>
@@ -442,7 +470,7 @@ if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){do
       .then(function(j){
         if(!j.success) throw new Error(j.message||'failed');
         status.className='sent';
-        status.textContent='Got it, '+data.name.split(' ')[0]+'. We\'ll email you within one business day with the brief form and payment link.';
+        status.textContent='Got it, '+data.name.split(' ')[0]+'. We\'ll email you within one business day with a payment link.';
         form.reset();btn.textContent='Sent';
       })
       .catch(function(){
