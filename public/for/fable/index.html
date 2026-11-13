@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Made for Fable | Hookset Creative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#f2f4f9;--surface:#fff;--line:#d5dae8;--fg:#0c1020;--muted:#59617a;--accent:#b86b00;--accent-ink:#fff;
+--display:"Unbounded","Arial Black",system-ui,sans-serif;--body:"Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0d18;--surface:#121729;--line:#252c47;--fg:#eef0f8;--muted:#8e96b3;--accent:#ffc24b;--accent-ink:#0a0d18;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0d18;--surface:#121729;--line:#252c47;--fg:#eef0f8;--muted:#8e96b3;--accent:#ffc24b;--accent-ink:#0a0d18;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);padding:0 16px}
+.wrap{max-width:1080px;margin:0 auto}h1,h2{font-family:var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}p{margin:0}
+.mono{font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:12px;flex-wrap:wrap}
+.logo{font:800 19px var(--display);text-decoration:none;color:inherit}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:48px;align-items:center;padding:28px 0 56px}
+.hero h1{font-size:clamp(30px,4.6vw,52px);line-height:1.05;margin:14px 0 18px}
+.hero p.lead{color:var(--muted);font-size:18px;max-width:520px}
+.phone{position:relative;border-radius:30px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 30px 60px rgba(10,13,24,.25)}
+.phone video{width:100%;height:100%;object-fit:cover;display:block}
+.snd{position:absolute;left:14px;bottom:14px;font:700 14px var(--body);border:0;border-radius:999px;padding:10px 16px;background:rgba(255,255,255,.92);color:#0c1020;cursor:pointer}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin:18px 0 56px}
+.grid img{width:100%;border-radius:16px;display:block;border:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin:18px 0 56px}
+.steps b{display:block;font:600 18px var(--display);margin:8px 0 6px}.steps p{color:var(--muted);font-size:15px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;font:700 16px var(--body);padding:15px 24px;border-radius:999px;text-decoration:none;border:1px solid var(--line);color:var(--fg)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.note{color:var(--muted);font-size:13px;padding:28px 0 48px}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:28px}.phone{max-width:360px;margin:0 auto;width:100%;order:-1}}
+</style></head><body><div class="wrap">
+<nav><a class="logo" href="https://hooksetcreative.com/">Hookset Creative</a><span class="mono">Made for Fable · spec concept</span></nav>
+<section class="hero"><div><span class="mono">For the Fable team</span><h1>Side table? Crate.</h1><p class="lead">Your ads say the crate fits homes of every aesthetic. So we showed it: six homes, a doodle that walks in and settles down, a puppy peeking out, and a 16-second Reel with an original track.</p>
+<div class="cta"><a class="btn primary" href="https://buy.stripe.com/dRmbJ174z3aM2051vh14400">Start a $150 trial</a><a class="btn" href="mailto:hello@hooksetcreative.com?subject=Fable%20ads">Reply to Jesus</a></div></div>
+<div class="phone"><video id="v" src="reel.mp4" poster="poster.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="snd" id="s" type="button">Tap for sound</button></div></section>
+<h2 style="font-size:26px">What we noticed</h2><div class="box" style="margin:18px 0 56px"><p>Your copy says the crate &#x27;fits seamlessly into homes of every aesthetic&#x27;, but the ads we sampled show it in the same few rooms or as a cutout on a sale graphic. The angle: let people guess what it is (side table? nightstand?) before a dog walks in.</p></div>
+<h2 style="font-size:26px">Statics from the same shoot</h2><div class="grid"><img src="ad1.jpg" alt="Spec ad 1 for the Signature Crate" loading="lazy"><img src="ad2.jpg" alt="Spec ad 2 for the Signature Crate" loading="lazy"></div>
+<h2 style="font-size:26px">How it was made</h2><div class="steps">
+<div class="box"><span class="mono">01</span><b>Your photo</b><p>We started from one of your own product photos of the Signature Crate. We never invent the product.</p></div>
+<div class="box"><span class="mono">02</span><b>New scenes, checked</b><p>Each new setting is generated around that photo and checked against the real product before it's used.</p></div>
+<div class="box"><span class="mono">03</span><b>Live footage + music</b><p>Approved stills are animated with the camera locked so the product stays put, then cut to an original music track.</p></div></div>
+<div class="box"><h2 style="font-size:24px">Want this for your next launch?</h2><p style="color:var(--muted);margin-top:10px">The $150 trial: 8 statics in new scenes and 1 Reel like this one, for one product, delivered in 3 business days. If none are usable, you get a full refund.</p>
+<div class="cta"><a class="btn primary" href="https://buy.stripe.com/dRmbJ174z3aM2051vh14400">Start the trial</a><a class="btn" href="https://hooksetcreative.com/#pricing">See monthly plans</a></div></div>
+<p class="note">Spec concept made by Hookset Creative from Fable's public product photos and real public reviews/claims. Not affiliated with or endorsed by Fable. Shared privately; these ads are yours to run.</p>
+</div><script>
+const v=document.getElementById('v'),s=document.getElementById('s');
+s.addEventListener('click',()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}s.textContent=v.muted?'Tap for sound':'Sound on';});
+</script></body></html>
