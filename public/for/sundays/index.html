@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Made for Sundays | Hookset Creative</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+<style>
+:root{--bg:#f2f4f9;--surface:#fff;--line:#d5dae8;--fg:#0c1020;--muted:#59617a;--accent:#b86b00;--accent-ink:#fff;
+--display:"Unbounded","Arial Black",system-ui,sans-serif;--body:"Manrope",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a0d18;--surface:#121729;--line:#252c47;--fg:#eef0f8;--muted:#8e96b3;--accent:#ffc24b;--accent-ink:#0a0d18;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a0d18;--surface:#121729;--line:#252c47;--fg:#eef0f8;--muted:#8e96b3;--accent:#ffc24b;--accent-ink:#0a0d18;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--body);padding:0 16px}
+.wrap{max-width:1080px;margin:0 auto}h1,h2{font-family:var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}p{margin:0}
+.mono{font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:12px;flex-wrap:wrap}
+.logo{font:800 19px var(--display);text-decoration:none;color:inherit}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,380px);gap:48px;align-items:center;padding:28px 0 56px}
+.hero h1{font-size:clamp(30px,4.6vw,52px);line-height:1.05;margin:14px 0 18px}
+.hero p.lead{color:var(--muted);font-size:18px;max-width:520px}
+.phone{position:relative;border-radius:30px;overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 30px 60px rgba(10,13,24,.25)}
+.phone video{width:100%;height:100%;object-fit:cover;display:block}
+.snd{position:absolute;left:14px;bottom:14px;font:700 14px var(--body);border:0;border-radius:999px;padding:10px 16px;background:rgba(255,255,255,.92);color:#0c1020;cursor:pointer}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:18px;margin:18px 0 56px}
+.grid img{width:100%;border-radius:16px;display:block;border:1px solid var(--line)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:18px;margin:18px 0 56px}
+.steps b{display:block;font:600 18px var(--display);margin:8px 0 6px}.steps p{color:var(--muted);font-size:15px}
+.cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+.btn{display:inline-flex;font:700 16px var(--body);padding:15px 24px;border-radius:999px;text-decoration:none;border:1px solid var(--line);color:var(--fg)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.note{color:var(--muted);font-size:13px;padding:28px 0 48px}
+.accgrid{display:grid;grid-template-columns:minmax(0,220px) minmax(0,1fr);gap:28px;align-items:start}
+.ref{width:100%;border-radius:14px;border:1px solid var(--line);background:#fff}
+.checks{list-style:none;padding:0;margin:0;display:grid;gap:8px}.checks li{display:flex;gap:10px;align-items:baseline;font-weight:600}
+.ok{color:#1f9d55;font-weight:800}
+.strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:12px;margin-top:24px}
+.strip figure{margin:0}.strip img{width:100%;aspect-ratio:9/14;object-fit:cover;border-radius:10px;border:1px solid var(--line);display:block}
+.strip figcaption{font:600 13px var(--body);color:var(--muted);margin-top:6px}
+@media (max-width:760px){.accgrid{grid-template-columns:1fr}.ref{max-width:240px}}
+@media (max-width:760px){.hero{grid-template-columns:1fr;gap:28px}.phone{max-width:360px;margin:0 auto;width:100%;order:-1}}
+</style></head><body><div class="wrap">
+<nav><a class="logo" href="https://hooksetcreative.com/">Hookset Creative</a><span class="mono">Made for Sundays · spec concept</span></nav>
+<section class="hero"><div><span class="mono">For the Sundays team</span><h1>The Get Together, on six real Sundays.</h1><p class="lead">Your Black Friday ads lead with the offer. So we put the Get Together 4-Piece Sectional in six real homes: Sunday coffee, family movie night, a friend crashing on it, a dog nap, the holidays and a lazy afternoon, and cut it into a 15-second Reel that still ends on your Black Friday offer.</p>
+<div class="cta"><a class="btn primary" href="https://buy.stripe.com/dRmbJ174z3aM2051vh14400">Start a $150 trial</a><a class="btn" href="mailto:hello@hooksetcreative.com?subject=Sundays%20ads">Reply to Jesus</a></div></div>
+<div class="phone"><video id="v" src="reel.mp4" poster="poster.jpg" autoplay muted loop playsinline preload="metadata"></video><button class="snd" id="s" type="button">Tap for sound</button></div></section>
+<h2 style="font-size:26px">What we noticed</h2><div class="box" style="margin:18px 0 56px"><p>Most of the ads we sampled from the Black Friday push that started Nov 12 lead with big &#x27;Up to 40% off everything&#x27; type, on plain color cards or laid over a room photo, and the Get Together catalog ads we saw show the sofa as a white-background cutout. Your own line, &#x27;made for real life&#x27;, is easiest to believe when the sofa is in a real one: coffee on a Sunday, a dog asleep on the chaise, a friend on the couch for the night.</p></div>
+<h2 style="font-size:26px">Statics from the same shoot</h2><div class="grid"><img src="ad1.jpg" alt="Spec ad 1 for the Get Together™ 4-Piece Modular Sectional" loading="lazy"><img src="ad2.jpg" alt="Spec ad 2 for the Get Together™ 4-Piece Modular Sectional" loading="lazy"></div>
+<h2 style="font-size:26px">Accuracy check</h2>
+<div class="box acc" style="margin:18px 0 56px"><div class="accgrid"><div><img class="ref" src="ref.jpg" alt="Your product photo"><p class="mono" style="margin-top:10px">Your photo: the reference</p></div>
+<div><p style="margin-bottom:12px">Every scene was compared at full size against your product photo on these points before it was used:</p><ul class="checks"><li><span class="ok">&#10003;</span>Three seats plus one ottoman chaise</li><li><span class="ok">&#10003;</span>Khaki-olive heathered fabric</li><li><span class="ok">&#10003;</span>Corner-chair ends, armless middle</li><li><span class="ok">&#10003;</span>Skirt to the floor, no legs showing</li></ul>
+<p style="color:var(--muted);font-size:15px;margin-top:12px">7 scenes checked, 7 passed. We first tried the 5-piece closed L-shaped sectional; the module count drifted in the generated rooms, so we switched to the simpler 4-piece configuration (three seats plus an ottoman chaise) in the same Olive fabric. We then regenerated three rooms (movie night, friend crashing, holidays) whose first versions had a pleated skirt, missing corner-chair sides or a rolled arm, and redid the Sunday-morning clip to remove a curtain glitch. In the holidays room the ottoman sits on the left; it's a free-standing piece, so it can go on either side. Each moving clip was checked at 7 points across the clip so the product keeps its shape. Checked by Hookset on Nov 16, 2026.</p></div></div>
+<div class="strip"><figure><img src="chk0.jpg" alt="Checked scene 1" loading="lazy"><figcaption><span class="ok">&#10003;</span> 4/4</figcaption></figure><figure><img src="chk1.jpg" alt="Checked scene 2" loading="lazy"><figcaption><span class="ok">&#10003;</span> 4/4</figcaption></figure><figure><img src="chk2.jpg" alt="Checked scene 3" loading="lazy"><figcaption><span class="ok">&#10003;</span> 4/4</figcaption></figure><figure><img src="chk3.jpg" alt="Checked scene 4" loading="lazy"><figcaption><span class="ok">&#10003;</span> 4/4</figcaption></figure><figure><img src="chk4.jpg" alt="Checked scene 5" loading="lazy"><figcaption><span class="ok">&#10003;</span> 4/4</figcaption></figure><figure><img src="chk5.jpg" alt="Checked scene 6" loading="lazy"><figcaption><span class="ok">&#10003;</span> 4/4</figcaption></figure><figure><img src="chk6.jpg" alt="Checked scene 7" loading="lazy"><figcaption><span class="ok">&#10003;</span> 4/4</figcaption></figure></div></div><h2 style="font-size:26px">How it was made</h2><div class="steps">
+<div class="box"><span class="mono">01</span><b>Your photo</b><p>We started from one of your own product photos of the Get Together™ 4-Piece Modular Sectional. We never invent the product.</p></div>
+<div class="box"><span class="mono">02</span><b>New scenes, checked</b><p>Each new setting is generated around that photo and checked against the real product before it's used.</p></div>
+<div class="box"><span class="mono">03</span><b>Live footage + music</b><p>Approved stills are animated with the camera locked so the product stays put, then cut to an original music track.</p></div></div>
+<div class="box"><h2 style="font-size:24px">Want this for your next launch?</h2><p style="color:var(--muted);margin-top:10px">The $150 trial: 10 ads for one product, including a Reel like this one, delivered in 3 business days. If none are usable, you get a full refund.</p>
+<div class="cta"><a class="btn primary" href="https://buy.stripe.com/dRmbJ174z3aM2051vh14400">Start the trial</a><a class="btn" href="https://hooksetcreative.com/#pricing">See monthly plans</a></div></div>
+<p class="note">Spec concept made by Hookset Creative from Sundays's public product photos and real public reviews/claims. Not affiliated with or endorsed by Sundays. Shared privately; these ads are yours to run.</p>
+</div><script>
+const v=document.getElementById('v'),s=document.getElementById('s');
+s.addEventListener('click',()=>{v.muted=!v.muted;if(!v.muted){v.currentTime=0;v.play()}s.textContent=v.muted?'Tap for sound':'Sound on';});
+</script></body></html>
